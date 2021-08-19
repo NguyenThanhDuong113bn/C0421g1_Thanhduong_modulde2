@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class XoaPhanTuKhoiMang {
     public static void main(String[] args) {
-        int[] arr = {10, 4, 6, 7, 8, 0, 9};
+        int[] arr = {10, 4, 6, 7, 8, 5, 9, 9};
         System.out.println("Nhập vào phần tử muốn xóa: ");
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
