@@ -1,14 +1,14 @@
 package _4_Class_and_object.bai_tap;
 
-public class PhuongTrinhBac2 {
+public class PTBac2 {
     public double a;
     public double b;
     public double c;
-    public PhuongTrinhBac2(){
+    public PTBac2(){
 
     }
 
-    public PhuongTrinhBac2 (double a, double b, double c){
+    public PTBac2(double a, double b, double c){
         this.a = a;
         this.b= b;
         this.c=c;
