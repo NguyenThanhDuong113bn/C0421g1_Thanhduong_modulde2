@@ -12,6 +12,9 @@ public class Cricle {
         this.color=color;
     }
 
+    public Cricle(int i) {
+    }
+
     public double getRadius() {
         return radius;
     }
