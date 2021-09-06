@@ -23,7 +23,7 @@ public class BinarySearch {
         System.out.println("Enter a number");
         int num= scanner.nextInt();
         int result;
-        result =searchBinarySeacrch(list,0,list.length-1,num);
+        result =searchBinarySeacrch(list,0,list.length,num);
         if (result==-1) {
             System.out.println("Khong tim thay " + num + " trong danh sach");
         }else {
