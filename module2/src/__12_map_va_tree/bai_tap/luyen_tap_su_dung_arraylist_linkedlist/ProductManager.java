@@ -111,4 +111,15 @@ public class ProductManager {
         }
     }
 
+    public void add() {
+    }
+
+    public void input() {
+    }
+
+    public void show() {
+    }
+
+    public void find() {
+    }
 }

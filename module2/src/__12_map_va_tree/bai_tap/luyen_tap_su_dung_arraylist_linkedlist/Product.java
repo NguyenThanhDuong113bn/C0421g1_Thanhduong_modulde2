@@ -1,6 +1,9 @@
 package __12_map_va_tree.bai_tap.luyen_tap_su_dung_arraylist_linkedlist;
 
+import java.util.ArrayList;
+
 public class Product  {
+    public static Object add;
     private int id;
     private String name;
     private  int price;
@@ -9,6 +12,9 @@ public class Product  {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public static void add(ArrayList<ListCar> listCars1) {
     }
 
     public int getId() {

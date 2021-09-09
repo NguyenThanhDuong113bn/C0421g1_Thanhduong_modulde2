@@ -4,31 +4,27 @@ import java.io.*;
 import java.util.Scanner;
 
 public class CopyFile {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        InputStream inStream = null;
+        OutputStream outStream = null;
 
-        {
-            try {
-                FileWriter fileWriter = new FileWriter("src/_bai16_io_text_file/bai_tap/copy_file_text/source.txt");
-                fileWriter.write("Hello!");
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            inStream = new FileInputStream(new File("D:\\C0421g1_Thanhduong_modulde2\\module2\\src\\_bai16_io_text_file\\bai_tap\\copy_file_text\\source.txt"));
+            outStream = new FileOutputStream(new File("D:\\C0421g1_Thanhduong_modulde2\\module2\\src\\_bai16_io_text_file\\bai_tap\\copy_file_text\\dest.txt"));
+
+            int length;
+            byte[] buffer = new byte[1024];
+
+            // copy the file content in bytes
+            while ((length = inStream.read(buffer)) > 0) {
+                outStream.write(buffer, 0, length);
             }
-
-
-            try {
-                File file = new File("src/_bai16_io_text_file/bai_tap/copy_file_text/source.txt");
-                FileReader fileReader = new FileReader(file);
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                String line = null;
-                FileWriter fileWriter1 = new FileWriter("D:\\C0421g1_Thanhduong_modulde2\\module2\\src\\_bai16_io_text_file\\bai_tap\\copy_file_text\\target.txt");
-                while ((line = bufferedReader.readLine()) != null) {
-                    fileWriter1.write(line);
-                }
-                fileWriter1.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            System.out.println("Sao chep thanh cong!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            inStream.close();
+            outStream.close();
         }
     }
 
