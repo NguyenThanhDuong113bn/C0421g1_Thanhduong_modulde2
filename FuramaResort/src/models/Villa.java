@@ -12,6 +12,10 @@ public class Villa extends Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
+    public Villa(String tenDichvu, String dienTichSuDung, String chiPhiThue, String soNguoiToiDa, String kieuThue, String tieuChuanPhong, String dienTichHoBoi, String soTang) {
+        super();
+    }
+
     public String getStandardRoom() {
         return standardRoom;
     }

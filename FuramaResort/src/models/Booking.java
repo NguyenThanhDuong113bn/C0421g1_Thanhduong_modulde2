@@ -1,6 +1,6 @@
 package models;
 //mã booking, ngày bắt đầu, ngày kết thúc, mã khách hàng, tên dịch vụ, loại dịch vụ.
-public class Booking {
+public class Booking implements Comparable <Booking>{
     private String idOfBooking;
     private String startDate;
     private String endDate;
@@ -63,5 +63,22 @@ public class Booking {
 
     public void setServicesOfType(String servicesOfType) {
         this.servicesOfType = servicesOfType;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "idOfBooking='" + idOfBooking + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", idOfCustomer='" + idOfCustomer + '\'' +
+                ", nameOfServices='" + nameOfServices + '\'' +
+                ", servicesOfType='" + servicesOfType + '\'' +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        return 0;
     }
 }

@@ -6,18 +6,23 @@ public class Person {
     private String gender;
     private int identityCardNumber;
     private int phoneNumber;
-    private String guestType; //email
+    private String email;
+
 
     public Person() {
     }
 
-    public Person(String fullName, int dateOfBirth, String gender, int identityCardNumber, int phoneNumber, String guestType) {
+    public Person(String fullName, int dateOfBirth, String gender, int identityCardNumber, int phoneNumber, String email) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.identityCardNumber = identityCardNumber;
         this.phoneNumber = phoneNumber;
-        this.guestType = guestType;
+        this.email = email;
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 
     public void setFullName(String fullName) {
@@ -56,11 +61,23 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getGuestType() {
-        return guestType;
+    public String getEmail() {
+        return email;
     }
 
-    public void setGuestType(String guestType) {
-        this.guestType = guestType;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fullName='" + fullName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", gender='" + gender + '\'' +
+                ", identityCardNumber=" + identityCardNumber +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

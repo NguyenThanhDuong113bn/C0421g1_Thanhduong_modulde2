@@ -1,9 +1,9 @@
-package controllers;
+package services.impl;
 
 import java.util.Scanner;
 
-public class ManagerPromotion {
-    public static void promotionManagerment() {
+public class PromotionServiceImpl {
+    public static void promotionService() {
         int count = 0;
         while (count < 1) {
             System.out.println("Ứng dụng quản lý khu nghỉ dưỡng Furama\n" +
@@ -17,18 +17,20 @@ public class ManagerPromotion {
             int chooseService = Integer.parseInt(scanner.nextLine());
             switch (chooseService) {
                 case 1:
-                    ManagerService.employeeManagement();
+                    EmployeeServiceImpl.employeeService();
                     break;
                 case 2:
-                    ManagerCustomer.customerManagement();
+                    CustomerServiceImpl.customerService();
                     break;
                 case 3:
-                    ManagerFacility.facilityManagement();
+                    FacilityServiceImpl.facilityService();
                     break;
                 case 4:
-                    ManagerBooking.bookingManagerment();
+                    BookingServiceImpl.bookingService();
 
             }
         }
     }
+
+
 }

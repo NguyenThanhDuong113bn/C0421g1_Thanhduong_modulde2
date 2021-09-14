@@ -20,6 +20,10 @@ public abstract class Facility {
         this.rentalType = rentalType;
     }
 
+    public Facility() {
+
+    }
+
     public String getId() {
         return id;
     }
@@ -66,5 +70,17 @@ public abstract class Facility {
 
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
+    }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "id='" + id + '\'' +
+                ", servicesName='" + servicesName + '\'' +
+                ", areUse=" + areUse +
+                ", rentalCost=" + rentalCost +
+                ", numberOfPeople=" + numberOfPeople +
+                ", rentalType='" + rentalType + '\'' +
+                '}';
     }
 }
