@@ -54,7 +54,7 @@ public class EmployeeServiceImpl  {
     private static void addNewEmployee() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhap Ma NV:");
-        String idOfEmployee = scanner().nextLine();
+        String employeeCode = scanner().nextLine();
         System.out.println("Nhap Ho Ten NV:");
         String fullName = scanner().nextLine();
         System.out.println("Nhap Ngay Sinh NV:");
@@ -75,9 +75,10 @@ public class EmployeeServiceImpl  {
         String email = scanner.nextLine();
         System.out.println(" Nhập lương");
         String wage =scanner.nextLine(); // wage:lương
-
+//        String fullName, String dateOfBirth, String gender, String identityCardNumber, String phoneNumber, String email,
+//                String employeeCode, String wage, String educationLevel, String position
         Employee employee = new Employee(fullName, dateOfBirth, gender, identityCardNumber, phoneNumber,
-                guestType,idOfEmployee,educationLevel,position, email, wage);
+           email,employeeCode,wage,educationLevel,position);
         List<Employee> list = new ArrayList<>();
         list.add(employee);
         FuncWriteRead.writeEmployeeCSV(list);

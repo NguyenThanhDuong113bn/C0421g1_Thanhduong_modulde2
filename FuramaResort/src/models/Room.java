@@ -3,7 +3,7 @@ package models;
 public class Room extends Facility {
     private ExtraServices extraServices;
 
-    public Room(String id, String servicesName, double areUse, double rentalCost, int numberOfPeople, String rentalType, ExtraServices extraServices) {
+    public Room(String id, String servicesName, String areUse, String rentalCost, String numberOfPeople, String rentalType, ExtraServices extraServices) {
         super(id, servicesName, areUse, rentalCost, numberOfPeople, rentalType);
         this.extraServices = extraServices;
     }
@@ -14,5 +14,22 @@ public class Room extends Facility {
 
     public void setExtraServices(ExtraServices extraServices) {
         this.extraServices = extraServices;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" + super.toString()+
+                "extraServices=" + extraServices +
+                '}';
+    }
+
+    @Override
+    public String getNumberOfFloors() {
+        return null;
+    }
+
+    @Override
+    public String getStandardRoom() {
+        return null;
     }
 }

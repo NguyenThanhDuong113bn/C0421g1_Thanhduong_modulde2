@@ -14,4 +14,11 @@ public class ExtraServices {
     public void setExtraServicesName(String extraServicesName) {
         this.extraServicesName = extraServicesName;
     }
+
+    @Override
+    public String toString() {
+        return "ExtraServices{" +
+                "extraServicesName='" + extraServicesName + '\'' +
+                '}';
+    }
 }

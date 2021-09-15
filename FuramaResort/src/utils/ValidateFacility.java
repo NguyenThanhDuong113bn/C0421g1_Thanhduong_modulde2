@@ -3,6 +3,11 @@ package utils;
 import java.util.regex.Pattern;
 
 public class ValidateFacility {
+    // Tên id dịch vụ
+    public static boolean validateId(String str){
+        String regexString ="^(SV)((VL)|(HO)|(RO))[-]\\\\d{4}$";
+        return Pattern.matches(regexString,str);
+    }
     //Tên dịch vụ
     public static boolean validateServiceName(String str) {
         String regexSring = "[ A - Z][a - z]*[0 - 9]*$";

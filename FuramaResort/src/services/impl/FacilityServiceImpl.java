@@ -80,105 +80,120 @@ public class FacilityServiceImpl {
 
     private static void addVilla() {
         Scanner scanner = new Scanner(System.in);
-        String tenDichvu = null;
+        String id = null;
+                do{
+                    System.out.println("Nhập id dịch vụ");
+                    id = scanner.nextLine();
+                    ValidateFacility validate = new ValidateFacility();
+
+                    if (!validate.validateId(id)){
+                        System.out.println("Lỗi!! Nhập lại");
+                        continue;
+                    }
+                    break;
+                } while (true);
+
+        String serviceName = null;
         do {
             System.out.println("Tên dịch vụ");
-            tenDichvu = scanner.nextLine();
+            serviceName = scanner.nextLine();
             ValidateFacility validate = new ValidateFacility();
 
-            if (!validate.validateServiceName(tenDichvu)) {
+            if (!validate.validateServiceName(serviceName)) {
                 System.err.println("LỖI: Định dạng Tên Dịch Vụ không hợp lệ");
                 continue;
             }
             break;
         }while (true);
 
-        String dienTichSuDung = null;
+        String areUse = null;
         do {
             System.out.println("Diện tích sử dụng (m2)");
-            dienTichSuDung =scanner.nextLine();
+            areUse  =scanner.nextLine();
             ValidateFacility validate =new ValidateFacility();
-            if (!validate.validateArea(dienTichSuDung)){
+            if (!validate.validateArea(areUse )){
                 System.err.println("Lỗi! Diện tích sử dụng phải lớn hơn 30(m2)");
                 continue;
             }
             break;
         }while (true);
 
-        String chiPhiThue = null;
+        String rentalCost = null;
         do {
             System.out.println("Nhập chi phí thuê");
-            chiPhiThue = scanner.nextLine();
+            rentalCost = scanner.nextLine();
             ValidateFacility validate =new ValidateFacility();
-            if (!validate.validatePrice(chiPhiThue)){
+            if (!validate.validatePrice(rentalCost)){
                 System.err.println(" Lỗi ! Giá tiền không hợp lệ");
                 continue;
             }
             break;
         }while (true);
 
-        String soNguoiToiDa =null;
+        String numberOfPeople=null;
         do {
             System.out.println("Số người tối đa");
-            soNguoiToiDa = scanner.nextLine();
+            numberOfPeople = scanner.nextLine();
             ValidateFacility validate = new ValidateFacility();
-            if (!validate.validateMaxPeople(soNguoiToiDa)){
+            if (!validate.validateMaxPeople(numberOfPeople)){
                 System.err.println("Lỗi! Số người tối đa phải lơn hơn 0 và nhỏ hơn 20");
                 continue;
             }
             break;
         }while (true);
 
-        String kieuThue = null;
+        String rentalType = null;
         do {
             System.out.println(" Nhập kiểu thuê");
-            kieuThue = scanner.nextLine();
+            rentalType = scanner.nextLine();
             ValidateFacility validate = new ValidateFacility();
-            if (!validate.validateRentalType(kieuThue)){
+            if (!validate.validateRentalType(rentalType)){
                 System.err.println("Lỗi !! Kieur thuê không hợp lệ");
                 continue;
             }
             break;
         }while (true);
 
-        String tieuChuanPhong = null;
+        String standarRoom= null;
         do {
             System.out.println("Nhập tiêu chuẩn phòng");
-            tieuChuanPhong = scanner.nextLine();
+            standarRoom= scanner.nextLine();
             ValidateFacility validate = new ValidateFacility();
-            if (!validate.validateRoomStandard(tieuChuanPhong)){
+            if (!validate.validateRoomStandard(standarRoom)){
                 System.err.println("Lỗi !! Định dạng phòng không hợp lệ");
                 continue;
             }
             break;
         }while (true);
 
-        String dienTichHoBoi = null;
+        String areaPool = null;
         do {
             System.out.println("Diện tích hồ bơi (m2)");
-            dienTichHoBoi = scanner.nextLine();
+            areaPool = scanner.nextLine();
             ValidateFacility validate = new ValidateFacility();
-            if (!validate.validateSwimmingPool(dienTichHoBoi)){
+            if (!validate.validateSwimmingPool(areaPool)){
                 System.err.println("Lỗi ! Diện tích hồ phải lớn hơn 30(m2) ");
                 continue;
             }
             break;
         }while (true);
 
-        String soTang = null;
+        String numberOfFloors = null;
         do {
             System.out.println("Số tầng");
-            soTang = scanner.nextLine();
+            numberOfFloors = scanner.nextLine();
             ValidateFacility validate = new ValidateFacility();
-            if (!validate.validateFloors(soTang)){
+            if (!validate.validateFloors(numberOfFloors)){
                 System.err.println("Lỗi!! Số tầng phải lớn hơn 0");
                 continue;
             }
             break;
         }while (true);
         System.out.println("Ok");
-        Villa  villa = new Villa(tenDichvu ,dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue, tieuChuanPhong,
-                dienTichHoBoi, soTang);
+//        String id, String servicesName, double areUse, double rentalCost, int numberOfPeople,
+//        String rentalType, String standarRoom, double areaPool, int numberOfFloors)
+        Villa  villa = new Villa(id ,serviceName , areUse ,rentalCost, numberOfPeople,rentalType,
+                standarRoom, areaPool,numberOfFloors);
         List<Villa> villaList = new ArrayList<>();
         villaList.add(villa);
         FuncWriteRead.writeVillaCSV(villaList);
@@ -188,25 +203,27 @@ public class FacilityServiceImpl {
 
     private static void addHouse() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập id dịch vụ");
+        String id =scanner.nextLine();
         System.out.println(" Nhập tên dịch vụ" );
-        String tenDichVu = scanner.nextLine();
+        String serviceName = scanner.nextLine();
         System.out.println("Nhập diện tích sử dụng");
-        String dienTichSuDung = scanner.nextLine();
+        String areUse = scanner.nextLine();
         System.out.println("Nhập chi phí thuê");
-        String chiPhiThue =scanner.nextLine();
+        String rentalCost =scanner.nextLine();
         System.out.println("Nhâp số người tối đa");
-        String soNguoiToiDa = scanner.nextLine();
+        String numberOfPeople = scanner.nextLine();
         System.out.println("Nhập kiểu thuê");
-        String kieuThue = scanner.nextLine();
+        String rentalType = scanner.nextLine();
         System.out.println("Nhập tiêu chuẩn phòng");
-        String tieuChuanPhong = scanner.nextLine();
-        System.out.println("Nhập tiện nghi khác");
-        String tienNgiKhac = scanner.nextLine();
+        String standardRoom = scanner.nextLine();
         System.out.println(" Nhập số tầng ");
-        String soTang = scanner.nextLine();
+        String  numberOfFloors = scanner.nextLine();
         System.out.println("Ok");
-        House house = new House(tenDichVu ,dienTichSuDung , chiPhiThue, soNguoiToiDa, kieuThue,
-                tieuChuanPhong , tienNgiKhac, soTang);
+//        (String id, String servicesName, String areUse, String rentalCost, String numberOfPeople,
+//                String rentalType, String standardRoom, String numberOfFloors)
+        House house = new House(id, serviceName, areUse, rentalCost,numberOfPeople,rentalType,
+                standardRoom,numberOfFloors);
         List<House> houseList =new ArrayList<>();
         houseList.add(house);
         FuncWriteRead.writeHouseCSV(houseList);

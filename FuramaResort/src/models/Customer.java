@@ -1,40 +1,43 @@
 package models;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.http.Address;
-
 //Mã khách hàng, Họ tên , Ngày sinh, Giới tính, Số CMND, Số Điện Thoại, Email, Loại khách, Địa chỉ
 public class Customer extends Person {
-    private int idOfCustomer ;
-    private CustomerType customerType;
+    private String idOfCustomer ;
+    private String customerType;
     private String addressOfCustomer;
+//
+//public Customer(String s){
+//
+//
 
-public Customer(String s){
 
-}
-
-    public Customer(String fullName, int dateOfBirth, String gender, int identityCardNumber, int phoneNumber, String email, int idOfCustomer, CustomerType customerType, String addressOfCustomer) {
+    public Customer(String fullName, String dateOfBirth, String gender, String identityCardNumber,
+                    String phoneNumber, String email, String idOfCustomer, String customerType,
+                    String addressOfCustomer) {
         super(fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
         this.idOfCustomer = idOfCustomer;
         this.customerType = customerType;
         this.addressOfCustomer = addressOfCustomer;
     }
 
-    public Customer(String idOfCustomer, String name, String birthday, String gender, String identityCardNumber, String phoneNumber, String email, String customerType, String address) {
-    }
+//    public Customer(String idOfCustomer, String name, String birthday, String gender, String identityCardNumber, String phoneNumber, String email, String customerType, String address) {
+//
+//    }
 
-    public int getIdOfCustomer() {
+
+    public String getIdOfCustomer() {
         return idOfCustomer;
     }
 
-    public void setIdOfCustomer(int idOfCustomer) {
+    public void setIdOfCustomer(String idOfCustomer) {
         this.idOfCustomer = idOfCustomer;
     }
 
-    public CustomerType getCustomerType() {
+    public String getCustomerType() {
         return customerType;
     }
 
-    public void setCustomerType(CustomerType customerType) {
+    public void setCustomerType(String customerType) {
         this.customerType = customerType;
     }
 

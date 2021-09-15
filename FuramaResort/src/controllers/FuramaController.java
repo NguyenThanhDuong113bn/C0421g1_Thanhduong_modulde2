@@ -9,38 +9,43 @@ public class FuramaController {
     public static void displayMainMenu() {
         int count =0;
         while (count < 1){
-            System.out.println( "Please enter your choice :\n " +
-                    "1.\tEmployee Management\n" +
-                    "2.\tCustomer Management\n" +
-                    "3.\tFacility Management \n" +
-                    "4.\tBooking Management\n" +
-                    "5.\tPromotion Management\n" +
-                    "6.\tExit\n");
-            Scanner scanner = new Scanner(System.in);
-            int chooseService = Integer.parseInt(scanner.nextLine());
-            switch (chooseService) {
-                case 1:
-                    EmployeeServiceImpl.employeeService();
-                    break;
-                case 2:
-                    CustomerServiceImpl.customerService();
-                    break;
-                case 3:
-                    FacilityServiceImpl.facilityService();
-                    break;
-                case 4:
-                    BookingServiceImpl.bookingService();
-                    break;
-                case 5:
-                    PromotionServiceImpl.promotionService();
-                    break;
-                case 6:
-                    isExit();
-                    break;
-                default:
-                    System.err.println("There is no option");
-                    break;
+            try {
+                System.out.println( "Please enter your choice :\n " +
+                        "1.\tEmployee Management\n" +
+                        "2.\tCustomer Management\n" +
+                        "3.\tFacility Management \n" +
+                        "4.\tBooking Management\n" +
+                        "5.\tPromotion Management\n" +
+                        "6.\tExit\n");
+                Scanner scanner = new Scanner(System.in);
+                int chooseService = Integer.parseInt(scanner.nextLine());
+                switch (chooseService) {
+                    case 1:
+                        EmployeeServiceImpl.employeeService();
+                        break;
+                    case 2:
+                        CustomerServiceImpl.customerService();
+                        break;
+                    case 3:
+                        FacilityServiceImpl.facilityService();
+                        break;
+                    case 4:
+                        BookingServiceImpl.bookingService();
+                        break;
+                    case 5:
+                        PromotionServiceImpl.promotionService();
+                        break;
+                    case 6:
+                        isExit();
+                        break;
+                    default:
+                        System.err.println("There is no option");
+                        break;
+                }
+            }catch (Exception e){
+                System.out.println(" ban nhap ko dung ky tu");
             }
+
         }
     }
 

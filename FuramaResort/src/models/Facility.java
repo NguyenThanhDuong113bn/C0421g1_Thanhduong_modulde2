@@ -4,14 +4,15 @@ package models;
 // Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa, Kiểu thuê
 // (bao gồm thuê theo năm, tháng, ngày, giờ.
 public abstract class Facility {
+
     protected String id;
     private String servicesName;
-    private double areUse;
-    private double rentalCost ;
-    private int numberOfPeople;
+    private String areUse;
+    private String rentalCost ;
+    private String numberOfPeople;
     private String rentalType;
 
-    public Facility(String id, String servicesName, double areUse, double rentalCost, int numberOfPeople, String rentalType) {
+    public Facility(String id, String servicesName, String areUse, String rentalCost, String numberOfPeople, String rentalType) {
         this.id = id;
         this.servicesName = servicesName;
         this.areUse = areUse;
@@ -40,27 +41,27 @@ public abstract class Facility {
         this.servicesName = servicesName;
     }
 
-    public double getAreUse() {
+    public String getAreUse() {
         return areUse;
     }
 
-    public void setAreUse(double areUse) {
+    public void setAreUse(String areUse) {
         this.areUse = areUse;
     }
 
-    public double getRentalCost() {
+    public String getRentalCost() {
         return rentalCost;
     }
 
-    public void setRentalCost(double rentalCost) {
+    public void setRentalCost(String rentalCost) {
         this.rentalCost = rentalCost;
     }
 
-    public int getNumberOfPeople() {
+    public String getNumberOfPeople() {
         return numberOfPeople;
     }
 
-    public void setNumberOfPeople(int numberOfPeople) {
+    public void setNumberOfPeople(String numberOfPeople) {
         this.numberOfPeople = numberOfPeople;
     }
 
@@ -83,4 +84,8 @@ public abstract class Facility {
                 ", rentalType='" + rentalType + '\'' +
                 '}';
     }
+
+    public abstract String getNumberOfFloors();
+
+    public abstract String getStandardRoom();
 }

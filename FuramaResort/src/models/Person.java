@@ -1,18 +1,19 @@
 package models;
 
 public class Person {
-    private String fullName;
-    private int dateOfBirth;
+    protected String fullName;
+
+    private String dateOfBirth;
     private String gender;
-    private int identityCardNumber;
-    private int phoneNumber;
+    private String identityCardNumber;
+    private String phoneNumber;
     private String email;
 
 
     public Person() {
     }
 
-    public Person(String fullName, int dateOfBirth, String gender, int identityCardNumber, int phoneNumber, String email) {
+    public Person(String fullName, String dateOfBirth, String gender, String identityCardNumber, String phoneNumber, String email) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -29,11 +30,11 @@ public class Person {
         this.fullName = fullName;
     }
 
-    public int getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -45,19 +46,19 @@ public class Person {
         this.gender = gender;
     }
 
-    public int getIdentityCardNumber() {
+    public String getIdentityCardNumber() {
         return identityCardNumber;
     }
 
-    public void setIdentityCardNumber(int identityCardNumber) {
+    public void setIdentityCardNumber(String identityCardNumber) {
         this.identityCardNumber = identityCardNumber;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -71,13 +72,13 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return
                 "fullName='" + fullName + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", gender='" + gender + '\'' +
                 ", identityCardNumber=" + identityCardNumber +
                 ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\''
+               ;
     }
 }

@@ -2,6 +2,7 @@ package services.impl;
 
 import controllers.FuramaController;
 import models.Customer;
+import models.CustomerType;
 import utils.FuncWriteRead;
 
 import java.util.ArrayList;
@@ -49,9 +50,9 @@ public class CustomerServiceImpl {
         System.out.println("Nhập mã KH");
         String idOfCustomer = scanner().nextLine();
         System.out.println("Nhập họ tên KH");
-        String name = scanner().nextLine();
+        String fullName = scanner().nextLine();
         System.out.println(" Nhập ngày sinh KH");
-        String birthday = scanner().nextLine();
+        String dateOfBirth = scanner().nextLine();
         System.out.println(" Nhập giới tính KH");
         String gender = scanner().nextLine();
         System.out.println(" Nhập số CMND KH");
@@ -63,10 +64,13 @@ public class CustomerServiceImpl {
         System.out.println("Nhập loại KH");
         String customerType = scanner().nextLine();
         System.out.println("Nhập địa chỉ KH");
-        String address = scanner().nextLine();
-
-        Customer customer =new Customer(idOfCustomer, name, birthday, gender,identityCardNumber,phoneNumber,
-                email, customerType, address);
+        String addressOfCustomer = scanner().nextLine();
+//
+//        String fullName, String dateOfBirth, String gender, String identityCardNumber,
+//                String phoneNumber, String email, String idOfCustomer, CustomerType customerType,
+//                String addressOfCustomer)
+        Customer customer =new Customer(fullName, dateOfBirth,gender,identityCardNumber,phoneNumber,email,idOfCustomer,
+                customerType,addressOfCustomer);
         List<Customer> list = new ArrayList<>();
         list.add(customer);
         FuncWriteRead.writeCustomerCSV(list);
